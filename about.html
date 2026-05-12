@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>О нас - FixiK</title>
+</head>
+<body class="page-main">
+<div class="wrapper">
+    <div class="header">
+        <header class="conteiner">
+            <img class="llogo" src="images/x.png" alt="">
+            <a class="logo" href="index.html">FixiK</a>
+            <button class="menu-toggle" id="menuToggle" type="button" aria-label="Открыть меню" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="index.html#request">Оставить заявку</a></li>
+                    <li><a href="guides.html">Найти руководство</a></li>
+                    <li><a href="about.html">О нас</a></li>
+                    <li class="active"><a href="index.html#request">Ремонт</a></li>
+                    <li class="active1"><a href="index.html">На главную</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <main>
+        <section class="page-hero">
+            <div class="conteiner page-hero-grid">
+                <div>
+                    <div class="page-kicker">О FixiK</div>
+                    <h1>Мы помогаем вещам жить дольше.</h1>
+                    <p>FixiK собирает понятные инструкции, опыт мастеров и быстрые заявки на ремонт в одном месте. Наша цель простая: чтобы сломанная техника не превращалась в мусор, если ее можно вернуть к жизни.</p>
+                </div>
+                <div class="page-hero-media">
+                    <img src="images/guide2.jpg" alt="Мастер ремонтирует устройство">
+                </div>
+            </div>
+        </section>
+
+        <section class="conteiner about-stats">
+            <div class="about-stat">
+                <strong>30 мин</strong>
+                <span>среднее время ответа на заявку</span>
+            </div>
+            <div class="about-stat">
+                <strong>8+</strong>
+                <span>категорий устройств для ремонта</span>
+            </div>
+            <div class="about-stat">
+                <strong>100%</strong>
+                <span>фокус на понятных шагах и честной диагностике</span>
+            </div>
+        </section>
+
+        <section class="content-section conteiner">
+            <div class="section-heading">
+                <h2>Что для нас важно</h2>
+                <p>Ремонт должен быть спокойным и прозрачным: вы понимаете проблему, видите варианты решения и выбираете удобный следующий шаг.</p>
+            </div>
+            <div class="value-grid">
+                <article class="value-card">
+                    <h3>Понятность</h3>
+                    <p>Мы объясняем ремонт человеческим языком: без лишних терминов, но с точностью там, где она нужна.</p>
+                </article>
+                <article class="value-card">
+                    <h3>Практичность</h3>
+                    <p>Если можно починить самому, руководство подскажет путь. Если нужен мастер, заявка быстро передаст детали.</p>
+                </article>
+                <article class="value-card">
+                    <h3>Ответственность</h3>
+                    <p>Каждый ремонт экономит ресурсы и продлевает жизнь устройству, которое уже у вас есть.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="about-band">
+            <div class="conteiner about-band-grid">
+                <h2>Как работает FixiK</h2>
+                <div class="about-steps">
+                    <div class="about-step">
+                        <span>1</span>
+                        <div>
+                            <h3>Вы выбираете устройство</h3>
+                            <p>Телефон, ноутбук, планшет, ПК, консоль или бытовая техника.</p>
+                        </div>
+                    </div>
+                    <div class="about-step">
+                        <span>2</span>
+                        <div>
+                            <h3>Описываете проблему</h3>
+                            <p>Чем точнее описание, тем быстрее мастер поймет причину и подготовит инструменты.</p>
+                        </div>
+                    </div>
+                    <div class="about-step">
+                        <span>3</span>
+                        <div>
+                            <h3>Получаете следующий шаг</h3>
+                            <p>Мы связываемся с вами, уточняем детали и подбираем удобное время ремонта.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section conteiner">
+            <div class="section-heading">
+                <h2>Готовы починить устройство?</h2>
+                <p>Можно начать с руководства или сразу оставить заявку на диагностику.</p>
+            </div>
+            <a class="buttonpart" href="index.html#request">Оставить заявку на ремонт</a>
+        </section>
+    </main>
+</div>
+
+<script>
+    const menuToggle = document.getElementById('menuToggle');
+    const headerNav = document.querySelector('.header nav');
+
+    menuToggle.addEventListener('click', () => {
+        const isOpen = headerNav.classList.toggle('active');
+        menuToggle.classList.toggle('active', isOpen);
+        menuToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Найти руководство - FixiK</title>
+</head>
+<body class="page-main">
+<div class="wrapper">
+    <div class="header">
+        <header class="conteiner">
+            <img class="llogo" src="images/x.png" alt="">
+            <a class="logo" href="index.html">FixiK</a>
+            <button class="menu-toggle" id="menuToggle" type="button" aria-label="Открыть меню" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="index.html#request">Оставить заявку</a></li>
+                    <li><a href="guides.html">Найти руководство</a></li>
+                    <li><a href="about.html">О нас</a></li>
+                    <li class="active"><a href="index.html#request">Ремонт</a></li>
+                    <li class="active1"><a href="index.html">На главную</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <main>
+        <section class="guide-finder">
+            <div class="conteiner">
+                <div class="page-kicker">Библиотека ремонта</div>
+                <h1>Найдите руководство под свою поломку.</h1>
+                <p>Начните с категории или введите проблему: экран, батарея, клавиатура, не включается, шумит, греется. Страница подберет подходящие карточки и поможет быстро перейти к заявке.</p>
+
+                <div class="guide-search-panel">
+                    <input id="guideSearch" type="search" placeholder="Например: телефон экран, ноутбук батарея">
+                    <a class="request-btn" href="index.html#request">Заявка мастеру</a>
+                </div>
+                <div class="guide-filter-row" id="guideFilters">
+                    <button class="guide-filter active" type="button" data-filter="all">Все</button>
+                    <button class="guide-filter" type="button" data-filter="phone">Телефон</button>
+                    <button class="guide-filter" type="button" data-filter="laptop">Ноутбук</button>
+                    <button class="guide-filter" type="button" data-filter="tablet">Планшет</button>
+                    <button class="guide-filter" type="button" data-filter="pc">ПК</button>
+                    <button class="guide-filter" type="button" data-filter="console">Консоль</button>
+                    <button class="guide-filter" type="button" data-filter="home">Бытовая техника</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="guide-results">
+            <div class="conteiner">
+                <div class="guide-results-top">
+                    <h2>Популярные ремонты</h2>
+                    <div class="guide-count" id="guideCount"></div>
+                </div>
+                <div class="guide-grid" id="guideGrid">
+                    <article class="guide-card" data-category="phone" data-search="телефон экран стекло дисплей трещина iphone android">
+                        <img src="https://guide-images.cdn.ifixit.com/igi/jZaiuAYs5NLNLbJx.medium" alt="Телефон">
+                        <div class="guide-card-body">
+                            <div class="guide-meta">Телефон · 35-60 мин</div>
+                            <h3>Замена экрана телефона</h3>
+                            <p>Проверьте модель, подготовьте присоску, медиатор и аккуратно отсоедините шлейф дисплея.</p>
+                            <a class="button" href="index.html#request">Записаться</a>
+                        </div>
+                    </article>
+                    <article class="guide-card" data-category="phone" data-search="телефон батарея аккумулятор быстро садится зарядка">
+                        <img src="https://guide-images.cdn.ifixit.com/igi/V4m2ZCiaWdBcBZVT.medium" alt="Электроника">
+                        <div class="guide-card-body">
+                            <div class="guide-meta">Телефон · 30-50 мин</div>
+                            <h3>Замена аккумулятора</h3>
+                            <p>Подходит, если телефон быстро разряжается, выключается на холоде или не держит заряд.</p>
+                            <a class="button" href="index.html#request">Записаться</a>
+                        </div>
+                    </article>
+                    <article class="guide-card" data-category="laptop" data-search="ноутбук клавиатура кнопки mac windows залипают">
+                        <img src="https://guide-images.cdn.ifixit.com/igi/fqOwLIXJtQYvBYrh.medium" alt="Ноутбук">
+                        <div class="guide-card-body">
+                            <div class="guide-meta">Ноутбук · 40-90 мин</div>
+                            <h3>Клавиатура не реагирует</h3>
+                            <p>Сначала исключите программный сбой, затем проверьте шлейф и следы жидкости.</p>
+                            <a class="button" href="index.html#request">Записаться</a>
+                        </div>
+                    </article>
+                    <article class="guide-card" data-category="laptop" data-search="ноутбук перегрев шум кулер термопаста чистка">
+                        <img src="images/guide1.jpg" alt="Инструменты для ремонта">
+                        <div class="guide-card-body">
+                            <div class="guide-meta">Ноутбук · 45-75 мин</div>
+                            <h3>Чистка от пыли и перегрева</h3>
+                            <p>Разберите корпус, удерживайте вентилятор при продувке и замените старую термопасту.</p>
+                            <a class="button" href="index.html#request">Записаться</a>
+                        </div>
+                    </article>
+                    <article class="guide-card" data-category="tablet" data-search="планшет экран батарея зарядка ipad android">
+                        <img src="https://guide-images.cdn.ifixit.com/igi/cdgpFo2Gmc4amp3s.medium" alt="Планшет">
+                        <div class="guide-card-body">
+                            <div class="guide-meta">Планшет · 45-80 мин</div>
+                            <h3>Планшет не включается</h3>
+                            <p>Проверьте зарядное устройство, разъем питания и состояние батареи перед разбором.</p>
+                            <a class="button" href="index.html#request">Записаться</a>
+                        </div>
+                    </article>
+                    <article class="guide-card" data-category="pc" data-search="пк компьютер не включается блок питания видеокарта память">
+                        <img src="https://guide-images.cdn.ifixit.com/igi/BCU4AgbFicGvFcZA.medium" alt="ПК">
+                        <div class="guide-card-body">
+                            <div class="guide-meta">ПК · 20-60 мин</div>
+                            <h3>Компьютер не стартует</h3>
+                            <p>Пошагово проверьте питание, оперативную память, видеокарту и сигналы материнской платы.</p>
+                            <a class="button" href="index.html#request">Записаться</a>
+                        </div>
+                    </article>
+                    <article class="guide-card" data-category="console" data-search="консоль playstation xbox геймпад шум перегрев диск">
+                        <img src="https://guide-images.cdn.ifixit.com/igi/EEskYBovinrIQtQe.medium" alt="Игровая консоль">
+                        <div class="guide-card-body">
+                            <div class="guide-meta">Консоль · 45-90 мин</div>
+                            <h3>Консоль шумит или перегревается</h3>
+                            <p>Часто помогает чистка системы охлаждения, проверка вентилятора и новая термопаста.</p>
+                            <a class="button" href="index.html#request">Записаться</a>
+                        </div>
+                    </article>
+                    <article class="guide-card" data-category="home" data-search="бытовая техника пылесос чайник стиральная машина не работает">
+                        <img src="https://guide-images.cdn.ifixit.com/igi/yuk1YxQANOYorSCI.medium" alt="Бытовая техника">
+                        <div class="guide-card-body">
+                            <div class="guide-meta">Бытовая техника · 30-120 мин</div>
+                            <h3>Диагностика бытовой техники</h3>
+                            <p>Начните с питания, фильтров, предохранителей и признаков механического засора.</p>
+                            <a class="button" href="index.html#request">Записаться</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section conteiner">
+            <div class="section-heading">
+                <h2>Перед ремонтом</h2>
+                <p>Небольшая подготовка экономит время и снижает риск повредить устройство во время разборки.</p>
+            </div>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <strong>Сделайте резервную копию</strong>
+                    <p>Особенно перед ремонтом телефона, планшета или ноутбука.</p>
+                </div>
+                <div class="tip-card">
+                    <strong>Подготовьте место</strong>
+                    <p>Нужен светлый стол, контейнер для винтов и антистатичная аккуратность.</p>
+                </div>
+                <div class="tip-card">
+                    <strong>Не тяните шлейфы</strong>
+                    <p>Большинство тонких кабелей открываются через защелку, а не силой.</p>
+                </div>
+                <div class="tip-card">
+                    <strong>Сомневаетесь - пишите</strong>
+                    <p>Если поломка похожа на сложную, лучше сразу оставить заявку мастеру.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>
+
+<script>
+    const menuToggle = document.getElementById('menuToggle');
+    const headerNav = document.querySelector('.header nav');
+    const searchInput = document.getElementById('guideSearch');
+    const filterButtons = document.querySelectorAll('.guide-filter');
+    const guideCards = document.querySelectorAll('.guide-card');
+    const guideCount = document.getElementById('guideCount');
+    let activeFilter = 'all';
+
+    menuToggle.addEventListener('click', () => {
+        const isOpen = headerNav.classList.toggle('active');
+        menuToggle.classList.toggle('active', isOpen);
+        menuToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    function renderGuides() {
+        const query = searchInput.value.trim().toLowerCase();
+        let visibleCount = 0;
+
+        guideCards.forEach(card => {
+            const matchesFilter = activeFilter === 'all' || card.dataset.category === activeFilter;
+            const matchesSearch = !query || card.dataset.search.includes(query) || card.textContent.toLowerCase().includes(query);
+            const isVisible = matchesFilter && matchesSearch;
+            card.style.display = isVisible ? '' : 'none';
+            if (isVisible) visibleCount++;
+        });
+
+        guideCount.textContent = `${visibleCount} найдено`;
+    }
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            filterButtons.forEach(item => item.classList.remove('active'));
+            button.classList.add('active');
+            activeFilter = button.dataset.filter;
+            renderGuides();
+        });
+    });
+
+    searchInput.addEventListener('input', renderGuides);
+    renderGuides();
+</script>
+</body>
+</html>
