@@ -34,11 +34,11 @@
             <div class="conteiner">
                 <div class="page-kicker">Библиотека ремонта</div>
                 <h1>Найдите руководство под свою поломку.</h1>
-                <p>Начните с категории или введите проблему: экран, батарея, клавиатура, не включается, шумит, греется. Страница подберет подходящие карточки и поможет быстро перейти к заявке.</p>
+                <p>Начните с категории или введите проблему: экран, батарея, клавиатура, не включается, шумит, греется. Страница подберет подходящее руководство с инструментами, проверками и шагами ремонта.</p>
 
                 <div class="guide-search-panel">
                     <input id="guideSearch" type="search" placeholder="Например: телефон экран, ноутбук батарея">
-                    <a class="request-btn" href="index.html#request">Заявка мастеру</a>
+                    <button class="request-btn" id="clearSearch" type="button">Сбросить</button>
                 </div>
                 <div class="guide-filter-row" id="guideFilters">
                     <button class="guide-filter active" type="button" data-filter="all">Все</button>
@@ -62,73 +62,177 @@
                     <article class="guide-card" data-category="phone" data-search="телефон экран стекло дисплей трещина iphone android">
                         <img src="https://guide-images.cdn.ifixit.com/igi/jZaiuAYs5NLNLbJx.medium" alt="Телефон">
                         <div class="guide-card-body">
-                            <div class="guide-meta">Телефон · 35-60 мин</div>
+                            <div class="guide-meta">Телефон · средняя сложность · 35-60 мин</div>
                             <h3>Замена экрана телефона</h3>
-                            <p>Проверьте модель, подготовьте присоску, медиатор и аккуратно отсоедините шлейф дисплея.</p>
-                            <a class="button" href="index.html#request">Записаться</a>
+                            <p>Если стекло разбито, появились полосы или сенсор нажимается сам, начните с безопасной разборки дисплейного модуля.</p>
+                            <div class="guide-details">
+                                <strong>Инструменты</strong>
+                                <p>Фен или грелка, присоска, медиатор, крестовая отвертка, пластиковая лопатка.</p>
+                                <strong>Шаги</strong>
+                                <ol>
+                                    <li>Выключите телефон и выньте SIM-лоток.</li>
+                                    <li>Прогрейте рамку экрана 1-2 минуты, чтобы размягчить клей.</li>
+                                    <li>Поднимите экран присоской и медленно пройдите медиатором по краю.</li>
+                                    <li>Отсоедините аккумулятор, затем шлейфы дисплея.</li>
+                                    <li>Поставьте новый модуль, проверьте сенсор и только потом заклейте корпус.</li>
+                                </ol>
+                                <p class="guide-warning">Остановитесь, если экран не поднимается без усилия: можно порвать шлейф или повредить рамку.</p>
+                            </div>
+                            <button class="button guide-toggle" type="button">Открыть руководство</button>
                         </div>
                     </article>
                     <article class="guide-card" data-category="phone" data-search="телефон батарея аккумулятор быстро садится зарядка">
                         <img src="https://guide-images.cdn.ifixit.com/igi/V4m2ZCiaWdBcBZVT.medium" alt="Электроника">
                         <div class="guide-card-body">
-                            <div class="guide-meta">Телефон · 30-50 мин</div>
+                            <div class="guide-meta">Телефон · средняя сложность · 30-50 мин</div>
                             <h3>Замена аккумулятора</h3>
-                            <p>Подходит, если телефон быстро разряжается, выключается на холоде или не держит заряд.</p>
-                            <a class="button" href="index.html#request">Записаться</a>
+                            <p>Подходит, если телефон быстро разряжается, выключается на холоде или показывает неверный процент заряда.</p>
+                            <div class="guide-details">
+                                <strong>Инструменты</strong>
+                                <p>Пластиковая лопатка, пинцет, спирт 90%+, новый аккумулятор, клейкие полоски.</p>
+                                <strong>Шаги</strong>
+                                <ol>
+                                    <li>Разрядите батарею ниже 25% и полностью выключите телефон.</li>
+                                    <li>Откройте корпус по инструкции для вашей модели.</li>
+                                    <li>Сначала отключите шлейф аккумулятора от платы.</li>
+                                    <li>Медленно вытяните клейкие полоски или размягчите клей спиртом.</li>
+                                    <li>Установите новую батарею, подключите шлейф и проверьте зарядку.</li>
+                                </ol>
+                                <p class="guide-warning">Не прокалывайте батарею и не гните ее металлическими инструментами.</p>
+                            </div>
+                            <button class="button guide-toggle" type="button">Открыть руководство</button>
                         </div>
                     </article>
                     <article class="guide-card" data-category="laptop" data-search="ноутбук клавиатура кнопки mac windows залипают">
                         <img src="https://guide-images.cdn.ifixit.com/igi/fqOwLIXJtQYvBYrh.medium" alt="Ноутбук">
                         <div class="guide-card-body">
-                            <div class="guide-meta">Ноутбук · 40-90 мин</div>
+                            <div class="guide-meta">Ноутбук · легкая/средняя · 40-90 мин</div>
                             <h3>Клавиатура не реагирует</h3>
-                            <p>Сначала исключите программный сбой, затем проверьте шлейф и следы жидкости.</p>
-                            <a class="button" href="index.html#request">Записаться</a>
+                            <p>Сначала исключите программный сбой, затем проверьте шлейф клавиатуры и следы жидкости.</p>
+                            <div class="guide-details">
+                                <strong>Инструменты</strong>
+                                <p>Крестовая отвертка, пластиковая карта, изопропиловый спирт, мягкая щетка.</p>
+                                <strong>Шаги</strong>
+                                <ol>
+                                    <li>Подключите внешнюю клавиатуру и проверьте, работает ли ввод.</li>
+                                    <li>Перезагрузите ноутбук и зайдите в BIOS: если клавиши работают там, проблема в системе.</li>
+                                    <li>Отключите питание, снимите нижнюю крышку и отключите аккумулятор.</li>
+                                    <li>Проверьте шлейф клавиатуры: он должен быть ровно вставлен в разъем.</li>
+                                    <li>Если была жидкость, очистите область спиртом и дайте полностью высохнуть.</li>
+                                </ol>
+                                <p class="guide-warning">Если есть коррозия на плате, не включайте ноутбук до диагностики.</p>
+                            </div>
+                            <button class="button guide-toggle" type="button">Открыть руководство</button>
                         </div>
                     </article>
                     <article class="guide-card" data-category="laptop" data-search="ноутбук перегрев шум кулер термопаста чистка">
                         <img src="images/guide1.jpg" alt="Инструменты для ремонта">
                         <div class="guide-card-body">
-                            <div class="guide-meta">Ноутбук · 45-75 мин</div>
+                            <div class="guide-meta">Ноутбук · профилактика · 45-75 мин</div>
                             <h3>Чистка от пыли и перегрева</h3>
-                            <p>Разберите корпус, удерживайте вентилятор при продувке и замените старую термопасту.</p>
-                            <a class="button" href="index.html#request">Записаться</a>
+                            <p>Если ноутбук шумит, греется и сбрасывает частоты, очистите охлаждение и замените термопасту.</p>
+                            <div class="guide-details">
+                                <strong>Инструменты</strong>
+                                <p>Отвертка, кисть, сжатый воздух, термопаста, салфетки без ворса.</p>
+                                <strong>Шаги</strong>
+                                <ol>
+                                    <li>Выключите ноутбук, отключите зарядку и батарею.</li>
+                                    <li>Снимите нижнюю крышку и сфотографируйте расположение винтов.</li>
+                                    <li>Удерживая вентилятор пальцем, продуйте радиатор и лопасти.</li>
+                                    <li>Снимите радиатор, удалите старую термопасту с чипа и основания.</li>
+                                    <li>Нанесите тонкий слой новой пасты и соберите охлаждение обратно.</li>
+                                </ol>
+                                <p class="guide-warning">Не запускайте вентилятор струей воздуха на высокой скорости: можно повредить подшипник.</p>
+                            </div>
+                            <button class="button guide-toggle" type="button">Открыть руководство</button>
                         </div>
                     </article>
                     <article class="guide-card" data-category="tablet" data-search="планшет экран батарея зарядка ipad android">
                         <img src="https://guide-images.cdn.ifixit.com/igi/cdgpFo2Gmc4amp3s.medium" alt="Планшет">
                         <div class="guide-card-body">
-                            <div class="guide-meta">Планшет · 45-80 мин</div>
+                            <div class="guide-meta">Планшет · диагностика · 45-80 мин</div>
                             <h3>Планшет не включается</h3>
                             <p>Проверьте зарядное устройство, разъем питания и состояние батареи перед разбором.</p>
-                            <a class="button" href="index.html#request">Записаться</a>
+                            <div class="guide-details">
+                                <strong>Инструменты</strong>
+                                <p>Заведомо исправная зарядка, фонарик, зубочистка, мультиметр по возможности.</p>
+                                <strong>Шаги</strong>
+                                <ol>
+                                    <li>Поставьте планшет на зарядку минимум на 30 минут.</li>
+                                    <li>Зажмите кнопку питания на 15-20 секунд для принудительного запуска.</li>
+                                    <li>Осмотрите разъем: удалите пыль деревянной зубочисткой без жидкости.</li>
+                                    <li>Попробуйте другой кабель и блок питания с подходящей мощностью.</li>
+                                    <li>Если реакции нет, вероятна проблема батареи, разъема или контроллера питания.</li>
+                                </ol>
+                                <p class="guide-warning">Не вскрывайте планшет металлическим ножом: экран легко трескается по краю.</p>
+                            </div>
+                            <button class="button guide-toggle" type="button">Открыть руководство</button>
                         </div>
                     </article>
                     <article class="guide-card" data-category="pc" data-search="пк компьютер не включается блок питания видеокарта память">
                         <img src="https://guide-images.cdn.ifixit.com/igi/BCU4AgbFicGvFcZA.medium" alt="ПК">
                         <div class="guide-card-body">
-                            <div class="guide-meta">ПК · 20-60 мин</div>
+                            <div class="guide-meta">ПК · диагностика · 20-60 мин</div>
                             <h3>Компьютер не стартует</h3>
                             <p>Пошагово проверьте питание, оперативную память, видеокарту и сигналы материнской платы.</p>
-                            <a class="button" href="index.html#request">Записаться</a>
+                            <div class="guide-details">
+                                <strong>Инструменты</strong>
+                                <p>Крестовая отвертка, запасной кабель питания, динамик POST или индикаторы платы.</p>
+                                <strong>Шаги</strong>
+                                <ol>
+                                    <li>Проверьте розетку, кабель и переключатель блока питания.</li>
+                                    <li>Отключите лишние устройства: диски, USB, подсветку, дополнительные платы.</li>
+                                    <li>Переустановите оперативную память, оставьте одну планку в рекомендованном слоте.</li>
+                                    <li>Проверьте видеокарту и питание CPU/GPU: разъемы должны быть защелкнуты.</li>
+                                    <li>Сбросьте CMOS и запустите минимальную сборку: плата, CPU, одна RAM, питание.</li>
+                                </ol>
+                                <p class="guide-warning">Если пахнет гарью или видны вздутые конденсаторы, питание сразу отключить.</p>
+                            </div>
+                            <button class="button guide-toggle" type="button">Открыть руководство</button>
                         </div>
                     </article>
                     <article class="guide-card" data-category="console" data-search="консоль playstation xbox геймпад шум перегрев диск">
                         <img src="https://guide-images.cdn.ifixit.com/igi/EEskYBovinrIQtQe.medium" alt="Игровая консоль">
                         <div class="guide-card-body">
-                            <div class="guide-meta">Консоль · 45-90 мин</div>
+                            <div class="guide-meta">Консоль · профилактика · 45-90 мин</div>
                             <h3>Консоль шумит или перегревается</h3>
                             <p>Часто помогает чистка системы охлаждения, проверка вентилятора и новая термопаста.</p>
-                            <a class="button" href="index.html#request">Записаться</a>
+                            <div class="guide-details">
+                                <strong>Инструменты</strong>
+                                <p>Torx-отвертки, кисть, сжатый воздух, термопаста, салфетки.</p>
+                                <strong>Шаги</strong>
+                                <ol>
+                                    <li>Отключите консоль от сети и подождите 10 минут.</li>
+                                    <li>Снимите внешние панели и очистите воздухозаборники.</li>
+                                    <li>Доберитесь до вентилятора, удерживайте его при продувке.</li>
+                                    <li>Если консоль давно не обслуживалась, замените термопасту на APU.</li>
+                                    <li>Соберите корпус и проверьте шум в игре под нагрузкой.</li>
+                                </ol>
+                                <p class="guide-warning">Не используйте бытовой пылесос рядом с платой без защиты от статики.</p>
+                            </div>
+                            <button class="button guide-toggle" type="button">Открыть руководство</button>
                         </div>
                     </article>
                     <article class="guide-card" data-category="home" data-search="бытовая техника пылесос чайник стиральная машина не работает">
                         <img src="https://guide-images.cdn.ifixit.com/igi/yuk1YxQANOYorSCI.medium" alt="Бытовая техника">
                         <div class="guide-card-body">
-                            <div class="guide-meta">Бытовая техника · 30-120 мин</div>
+                            <div class="guide-meta">Бытовая техника · базовая проверка · 30-120 мин</div>
                             <h3>Диагностика бытовой техники</h3>
                             <p>Начните с питания, фильтров, предохранителей и признаков механического засора.</p>
-                            <a class="button" href="index.html#request">Записаться</a>
+                            <div class="guide-details">
+                                <strong>Инструменты</strong>
+                                <p>Фонарик, отвертка, мягкая щетка, мультиметр для опытных пользователей.</p>
+                                <strong>Шаги</strong>
+                                <ol>
+                                    <li>Отключите устройство от сети перед любым осмотром.</li>
+                                    <li>Проверьте розетку, кабель, вилку и кнопку включения.</li>
+                                    <li>Очистите фильтры, контейнеры, воздуховоды или сливные зоны.</li>
+                                    <li>Осмотрите корпус на запах гари, следы воды и перегрева.</li>
+                                    <li>Если проблема повторяется, запишите звук/индикатор ошибки для точной диагностики.</li>
+                                </ol>
+                                <p class="guide-warning">Не разбирайте блоки с высоким напряжением, нагревателями и компрессорами без опыта.</p>
+                            </div>
+                            <button class="button guide-toggle" type="button">Открыть руководство</button>
                         </div>
                     </article>
                 </div>
@@ -154,8 +258,8 @@
                     <p>Большинство тонких кабелей открываются через защелку, а не силой.</p>
                 </div>
                 <div class="tip-card">
-                    <strong>Сомневаетесь - пишите</strong>
-                    <p>Если поломка похожа на сложную, лучше сразу оставить заявку мастеру.</p>
+                    <strong>Сомневаетесь - остановитесь</strong>
+                    <p>Если шаг требует силы или не совпадает с вашей моделью, лучше не продолжать разбор.</p>
                 </div>
             </div>
         </section>
@@ -169,6 +273,7 @@
     const filterButtons = document.querySelectorAll('.guide-filter');
     const guideCards = document.querySelectorAll('.guide-card');
     const guideCount = document.getElementById('guideCount');
+    const clearSearch = document.getElementById('clearSearch');
     let activeFilter = 'all';
 
     menuToggle.addEventListener('click', () => {
@@ -202,6 +307,22 @@
     });
 
     searchInput.addEventListener('input', renderGuides);
+    clearSearch.addEventListener('click', () => {
+        searchInput.value = '';
+        activeFilter = 'all';
+        filterButtons.forEach(item => item.classList.toggle('active', item.dataset.filter === 'all'));
+        renderGuides();
+        searchInput.focus();
+    });
+
+    document.querySelectorAll('.guide-toggle').forEach(button => {
+        button.addEventListener('click', () => {
+            const card = button.closest('.guide-card');
+            const isOpen = card.classList.toggle('open');
+            button.textContent = isOpen ? 'Свернуть руководство' : 'Открыть руководство';
+        });
+    });
+
     renderGuides();
 </script>
 </body>

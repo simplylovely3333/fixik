@@ -373,6 +373,8 @@ header nav ul li.active1::after{
     border-radius: 1rem;
     width: 160px;
     height: 120px;
+    object-fit: contain;
+    background: white;
 }
 .tutblock p{
     display: flex;
@@ -1364,6 +1366,49 @@ img {
     line-height: 1.5;
 }
 
+.guide-details {
+    display: none;
+    margin-top: 4px;
+    padding-top: 14px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.guide-card.open .guide-details {
+    display: block;
+}
+
+.guide-details strong {
+    display: block;
+    margin: 12px 0 6px;
+    font-size: 0.95rem;
+    color: #111827;
+}
+
+.guide-details strong:first-child {
+    margin-top: 0;
+}
+
+.guide-details ol {
+    display: grid;
+    gap: 8px;
+    margin: 8px 0 0 20px;
+}
+
+.guide-details li {
+    color: #374151;
+    line-height: 1.45;
+    padding-left: 2px;
+}
+
+.guide-warning {
+    margin-top: 12px;
+    padding: 10px 12px;
+    border-left: 3px solid #f59e0b;
+    background: #fff7ed;
+    color: #92400e !important;
+    border-radius: 6px;
+}
+
 .guide-meta {
     color: #0071ce;
     font-size: 0.85rem;
@@ -1374,6 +1419,7 @@ img {
     margin-top: auto;
     background: #11161a;
     color: white;
+    border: 0;
 }
 
 .guide-card .button:hover {
@@ -1459,6 +1505,8 @@ img {
 
     .tutblock {
         width: 100%;
+        height: auto;
+        min-height: 220px;
     }
 
     .partnersblocks,
@@ -1730,15 +1778,18 @@ img {
     }
 
     .tutblock {
-        height: 190px;
+        height: auto;
+        min-height: 190px;
         border-radius: 12px;
+        justify-content: flex-start;
     }
 
     .tutblock img {
         width: calc(100% - 22px);
         height: 105px;
-        object-fit: cover;
+        object-fit: contain;
         border-radius: 10px;
+        padding: 6px;
     }
 
     .tutblock p {
