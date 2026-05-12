@@ -12,7 +12,10 @@
         <header class="conteiner">
             <img class="llogo" src="images/x.png" alt="">
             <span class="logo">FixiK</span>
-            <nav>
+            <button class="nav-toggle" id="navToggle" aria-label="Меню" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <nav id="mainNav">
                 <ul>
                     <li><a href="#">Почини свои вещи</a></li>
                     <li><a href="#">Сообщество</a></li>
@@ -400,6 +403,23 @@
 </div>
 
 <script>
+    // ===== MOBILE NAV =====
+    (function() {
+        const toggle = document.getElementById('navToggle');
+        const nav = document.getElementById('mainNav');
+        if (!toggle || !nav) return;
+        toggle.addEventListener('click', () => {
+            const open = nav.classList.toggle('open');
+            toggle.classList.toggle('open', open);
+            toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+        nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+            nav.classList.remove('open');
+            toggle.classList.remove('open');
+            toggle.setAttribute('aria-expanded', 'false');
+        }));
+    })();
+
     // ===== CALENDAR =====
     const MONTHS_RU = ['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'];
     const DAYS_SHORT = ['Пн','Вт','Ср','Чт','Пт','Сб','Вс'];
