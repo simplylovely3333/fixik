@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>FixiK</title>
+</head>
+<body>
+<div class="wrapper">
+    <div class="header">
+        <header class="conteiner">
+            <img class="llogo" src="images/x.png" alt="">
+            <span class="logo">FixiK</span>
+            <nav>
+                <ul>
+                    <li><a href="#">Почини свои вещи</a></li>
+                    <li><a href="#">Сообщество</a></li>
+                    <li><a href="#">Магазин</a></li>
+                    <li class="active"><a href="#" id="openRegister">Регистрация</a></li>
+                    <li class="active1"><a href="#" id="openLogin">Войти</a></li>
+                    <li class="btn"><a href="#"></a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+    <div class="login" id="authBanner"><p>Присоединяйся к сообществу ремонтников - <a href="#" id="openTopRegister">Создай аккаунт</a></p></div>
+    <div class="hero conteiner">
+        <div class="hero--info">
+            <h1>Бесплатное руководство по ремонту</h1>
+            <h3>для всего, написанное всеми</h3>
+            <p>или</p>
+            <button class="btn">Search</button>
+            <img class="" src="images/heroconteiner.png" alt="">
+        </div>
+    </div>
+    <div class="conteiner trending">
+        <h3 class="n">Никогда не принимай "сломано"<br></h3> <h3 class="otvet">как ответ</h3>
+        <h1>Получите необходимые инструкции, используя качественные запчасти<br> <h2>и инструменты для ремонта, а также опыт авторитетного сообщества. </h2></h1>
+        <div class="info">
+            <div class="block">
+                <img class="guide1" src="images/guide1.jpg" alt="">
+                <div class="card-content">
+                    <div class="small-text"><img class="book" src="images/book.png" alt="">130 877 Бесплатных руководств</div>
+                    <h4>Пошаговые<br> руководства по<br> ремонту</h4>
+                    <p>Узнайте, как исправить что-либо с помощью простых<br> и понятных инструкций, созданных настоящими<br> ремонтниками.</p>
+                    <div class="button">Найти руководство</div>
+                </div>
+            </div>
+            <div class="block-2">
+                <img class="guide2" src="images/guide2.jpg" alt="">
+                <div class="card-content2">
+                    <div class="small-text2"><img class="key" src="images/key.png" alt="">100M+ Успешных ремонтов</div>
+                    <h4>Качественные детали и<br> точные инструменты</h4>
+                    <p>Точные инструменты и тысячи деталей для<br> выполнения работы, подкрепленные нашей<br> пожизненной гарантией.</p>
+                    <div class="button">Делайте покупки в нашем магазине</div>
+                </div>
+            </div>
+            <div class="block-3">
+                <img class="guide3" src="images/guide3.jpg" alt="">
+                <div class="card-content3">
+                    <div class="small-text3"><img class="lamp" src="images/lamp.png" alt="">242 433 Решений</div>
+                    <h4>Сообщество<br> дружелюбных<br> мастеров по ремонту</h4>
+                    <p>Никто не знает, как починить всё, но каждый знает, как починить что-нибудь.</p>
+                    <div class="button">Починить мир</div>
+                </div>
+            </div>  
+        </div>
+    </div>
+    <div class="tutorials conteiner">
+        <h3 class="r">Руководства по ремонту всего, от<br></h3> <h3 class="all">всех.</h3>
+        <h1>Каждый день мы помогаем тысячам людей чинить их вещи. Каждый<br> <h2>раз, когда вы что-то чините, вы помогаете планете.</h2></h1>
+        <div class="allblocks">
+            <div class="imageblocks">
+                <div class="tutblock">
+                    <img src="https://guide-images.cdn.ifixit.com/igi/fqOwLIXJtQYvBYrh.medium" alt="">
+                    <p>Mac</p>
+                </div>
+                <div class="tutblock">
+                    <img src="https://guide-images.cdn.ifixit.com/igi/yuk1YxQANOYorSCI.medium" alt="">
+                    <p>Бытовая техника</p>
+                </div>
+                <div class="tutblock">
+                    <img src="https://guide-images.cdn.ifixit.com/igi/IbYeQcWW16qkPfWE.medium" alt="">
+                    <p>Домашнее</p> <p2>хозяйство</p2>
+                </div>
+                <div class="tutblock">
+                    <img src="https://guide-images.cdn.ifixit.com/igi/EEskYBovinrIQtQe.medium" alt="">
+                    <p>Игровая консоль</p>
+                </div>
+                <div class="tutblock">
+                    <img src="https://guide-images.cdn.ifixit.com/igi/Euhc4CKLRNolbVCx.medium" alt="">
+                    <p>Инструменты</p>
+                </div>
+                <div class="tutblock">
+                    <img src="https://guide-images.cdn.ifixit.com/igi/FrmtLP24FSsPDqab.medium" alt="">
+                    <p>Камера</p>
+                </div>
+            </div>
+            <div class="imageblocks2">
+                <div class="tutblock">
+                    <img src="https://guide-images.cdn.ifixit.com/igi/QDWYeD6JShBQeNxA.medium" alt="">
+                    <p>Компьютерные</p> <p2>комплектующие</p2>
+                </div>
+                <div class="tutblock">
+                    <img src="https://guide-images.cdn.ifixit.com/igi/qZEfWObqRESuGwM4.medium" alt="">
+                    <p>Легковые и</p> <p2>Грузовые</p2><p2>автомобили</p2>
+                </div>
+                <div class="tutblock">
+                    <img src="https://guide-images.cdn.ifixit.com/igi/yy4PBEHTeUqChV3B.medium" alt="">
+                    <p>Медицинское</p> <p2>оборудование</p2>
+                </div>
+                <div class="tutblock">
+                    <img src="https://guide-images.cdn.ifixit.com/igi/6xnCqymZPROSN1fY.medium" alt="">
+                    <p>Навыки</p>
+                </div>
+                <div class="tutblock">
+                    <img src="https://guide-images.cdn.ifixit.com/igi/RiZwHfkakAeLZhKl.medium" alt="">
+                    <p>Одежда</p>
+                </div>
+                <div class="tutblock">
+                    <img src="https://guide-images.cdn.ifixit.com/igi/BCU4AgbFicGvFcZA.medium" alt="">
+                    <p>ПК</p>
+                </div>
+        </div>
+        <div class="imageblocks3">
+            <div class="tutblock">
+                <img src="https://guide-images.cdn.ifixit.com/igi/cdgpFo2Gmc4amp3s.medium" alt="">
+                <p>Планшет</p>
+            </div>
+            <div class="tutblock">
+                <img src="https://guide-images.cdn.ifixit.com/igi/jZaiuAYs5NLNLbJx.medium" alt="">
+                <p>Телефон</p>
+            </div>
+            <div class="tutblock">
+                <img src="https://guide-images.cdn.ifixit.com/igi/wsvLvOQqnMe23flO.medium" alt="">
+                <p>Транспортное</p> <p2>средство</p2>
+            </div>
+            <div class="tutblock">
+                <img src="https://guide-images.cdn.ifixit.com/igi/V4m2ZCiaWdBcBZVT.medium" alt="">
+                <p>Электроника</p>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="request-section">
+        <div class="request-container conteiner">
+            <div class="request-text">
+                <h2>Оставьте заявку на ремонт</h2>
+                <p>Опишите проблему — мы свяжемся с вами и подберём мастера</p>
+                <ul class="request-benefits">
+                    <li>✓ Бесплатная диагностика</li>
+                    <li>✓ Ответ в течение 30 минут</li>
+                    <li>✓ Гарантия на все работы</li>
+                </ul>
+            </div>
+            <form class="request-form" id="requestForm">
+                <div class="form-group">
+                    <label for="name">Ваше имя</label>
+                    <input type="text" id="name" name="name" placeholder="Иван Иванов" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Телефон</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+7 (777) 000-00-00" required>
+                </div>
+                <div class="form-group">
+                    <label for="device">Тип устройства</label>
+                    <select id="device" name="device" required>
+                        <option value="" disabled selected>Выберите устройство</option>
+                        <option value="Телефон">Телефон</option>
+                        <option value="Ноутбук">Ноутбук</option>
+                        <option value="Планшет">Планшет</option>
+                        <option value="Mac">Mac</option>
+                        <option value="ПК">ПК</option>
+                        <option value="Игровая консоль">Игровая консоль</option>
+                        <option value="Бытовая техника">Бытовая техника</option>
+                        <option value="Другое">Другое</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="description">Опишите проблему</label>
+                    <textarea id="description" name="description" placeholder="Например: не включается экран, трещина на стекле..." required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Выберите дату визита</label>
+                    <div class="calendar" id="calendar">
+                        <div class="calendar-header">
+                            <button type="button" class="cal-nav" id="calPrev">&#8249;</button>
+                            <span class="cal-month-year" id="calTitle"></span>
+                            <button type="button" class="cal-nav" id="calNext">&#8250;</button>
+                        </div>
+                        <div class="calendar-weekdays">
+                            <span>Пн</span><span>Вт</span><span>Ср</span><span>Чт</span><span>Пт</span><span>Сб</span><span>Вс</span>
+                        </div>
+                        <div class="calendar-days" id="calDays"></div>
+                    </div>
+                    <input type="hidden" id="selectedDate" name="date" required>
+                    <div class="selected-date-label" id="selectedDateLabel"></div>
+                </div>
+                <div class="form-group">
+                    <label for="time">Удобное время</label>
+                    <div class="time-slots" id="timeSlots">
+                        <button type="button" class="time-slot" data-time="09:00">09:00</button>
+                        <button type="button" class="time-slot" data-time="10:00">10:00</button>
+                        <button type="button" class="time-slot" data-time="11:00">11:00</button>
+                        <button type="button" class="time-slot" data-time="12:00">12:00</button>
+                        <button type="button" class="time-slot" data-time="13:00">13:00</button>
+                        <button type="button" class="time-slot" data-time="14:00">14:00</button>
+                        <button type="button" class="time-slot" data-time="15:00">15:00</button>
+                        <button type="button" class="time-slot" data-time="16:00">16:00</button>
+                        <button type="button" class="time-slot" data-time="17:00">17:00</button>
+                        <button type="button" class="time-slot" data-time="18:00">18:00</button>
+                    </div>
+                    <input type="hidden" id="selectedTime" name="time" required>
+                </div>
+                <button type="submit" class="request-btn" id="submitBtn">Отправить заявку</button>
+                <div class="form-status" id="formStatus"></div>
+            </form>
+        </div>
+    </div>
+
+    <div class="partners conteiner">
+        <h3>Наши партнеры</h3>
+        <h1>FixiK сотрудничает с некоторыми производителями, которые стремятся облегчить ремонт ваших вещей.</h1>
+        <div class="partnersblocks">
+            <a class="partblock" href="">
+                <img src="https://assets.cdn.ifixit.com/static/images/partners/google.png" alt="">
+            </a>
+            <a class="partblock" href="">
+                <img src="https://assets.cdn.ifixit.com/static/images/partners/valve.png" alt="">
+            </a>
+            <a class="partblock" href="">
+                <img src="https://assets.cdn.ifixit.com/static/images/partners/lenovo.png" alt="">
+            </a>
+            <a class="partblock" href="">
+                <img src="https://assets.cdn.ifixit.com/static/images/partners/microsoft.png" alt="">
+            </a>
+        </div>
+        <div class="partnersblocks2">
+            <a href="" class="partblock">
+                <img src="https://assets.cdn.ifixit.com/static/images/partners/motorola.png" alt="">
+            </a>
+            <a href="" class="partblock">
+                <img src="https://assets.cdn.ifixit.com/static/images/partners/hp.png" alt="">
+            </a>
+            <a href="" class="partblock">
+                <img src="https://assets.cdn.ifixit.com/static/images/partners/polaroid-transparent.png" alt="">
+            </a>
+            <a href="" class="partblock">
+                <img src="https://assets.cdn.ifixit.com/static/images/partners/patagonia.png" alt="">
+            </a>
+        </div>
+        <a href="" class="buttonpart">Просмотреть все совмесные действия</a>
+    </div>
+    <div class="footer conteiner">
+        <div class="footerobj">
+            <div class="footer4i1">
+                <ul class="col1">
+                    <p>FixiK</p>
+                    <li class="listtext">
+                        <a href="">О нас</a>
+                    </li>
+                    <li class="listtext">
+                        <a href="">Поддержка</a>
+                    </li>
+                    <li class="listtext">
+                        <a href="">Обсудить FixiK</a>
+                    </li>
+                    <li class="listtext">
+                        <a href="">Вакансии</a>
+                    </li>
+                    <li class="listtext">
+                        <a href="">Новостная лента</a>
+                    </li>
+                    <li class="listtext">
+                        <a href="">API</a>
+                    </li>
+                </ul>
+                <ul class="col2">
+                    <p>Ресурсы</p>
+                    <li class="listtext">
+                        <a href="">Пресса</a>
+                    </li>
+                    <li class="listtext">
+                        <a href="">Новости</a>
+                    </li>
+                    <li class="listtext">
+                        <a href="">Принять участие</a>
+                    </li>
+                    <li class="listtext">
+                        <a href="">Оптовый магазин</a>
+                    </li>
+                    <li class="listtext">
+                        <a href="">Торговый локатор</a>
+                    </li>
+                    <li class="listtext">
+                        <a href="">Для производителей</a>
+                    </li>
+                </ul>
+                <ul class="col3">
+                    <p>Юридическая<br>информация</p>
+                    <li class="listtext">
+                        <a href="">Специальные<br>возможности</a>
+                    </li>
+                    <li class="listtext">
+                        <a href="">Конфиденциальность</a>
+                    </li>
+                    <li class="listtext">
+                        <a href="">Условия</a>
+                    </li>
+                    <li class="listtext">
+                        <a href="">Согласие на<br> использование файлов<br> cookie</a>
+                    </li>
+                </ul>
+                <ul class="col4">
+                    <p><a href="">Скачать приложение</a></p>
+                    <div class="flexjust">
+                        <a href=""><img class="apple" src="https://assets.cdn.ifixit.com/static/images/app-landing/download-on-the-app-store-apple-logo-svgrepo-com.svg" alt=""></a>
+                        <a href=""><img src="https://assets.cdn.ifixit.com/static/images/app-landing/GetItOnGooglePlay_Badge_Web_color_English-01_fixed.svg" alt=""></a>
+                    </div>
+                </ul>
+            </div>
+            <div class="col5">
+                <div class="textleft">
+                    <h2>Будьте в курсе</h2>
+                    <p>Узнавайте что-то новое каждый месяц!</p>
+                </div>
+            </div>
+            <div class="footercolumn4">
+                <form class="email">
+                    <input class="placeholder" type="text" placeholder="Введите Вашу электронную почту">
+                    <button type="submit">Подписаться</button>
+                </form>
+            </div>
+            <div class="social">
+                <a href="#"><svg viewBox="0 0 448 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg" focusable="false" class="chakra-icon css-6ey7w3"><path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"></path></svg></a>
+                <a href=""><svg viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" focusable="false" class="chakra-icon css-6ey7w3"><path d="M16 1.714v12.572c0 .946-.768 1.714-1.714 1.714h-3.047V9.671h2.165l.31-2.414H11.24V5.714c0-.7.193-1.175 1.197-1.175h1.278V2.382a17.19 17.19 0 00-1.864-.096c-1.843 0-3.107 1.125-3.107 3.193V7.26H6.57v2.414h2.175V16H1.714A1.715 1.715 0 010 14.286V1.714C0 .768.768 0 1.714 0h12.572C15.232 0 16 .768 16 1.714z"></path></svg></a>
+                <a href=""><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" focusable="false" class="chakra-icon css-6ey7w3"><path d="M 2.3671875 3 L 9.4628906 13.140625 L 2.7402344 21 L 5.3808594 21 L 10.644531 14.830078 L 14.960938 21 L 21.871094 21 L 14.449219 10.375 L 20.740234 3 L 18.140625 3 L 13.271484 8.6875 L 9.2988281 3 L 2.3671875 3 z M 6.2070312 5 L 8.2558594 5 L 18.033203 19 L 16.001953 19 L 6.2070312 5 z"></path></svg></a>
+                <a href=""><svg viewBox="0 0 17 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" focusable="false" class="chakra-icon css-6ey7w3"><path d="M8.004 3.898A4.096 4.096 0 003.9 8a4.096 4.096 0 004.103 4.102A4.096 4.096 0 0012.106 8a4.096 4.096 0 00-4.102-4.102zm0 6.769A2.672 2.672 0 015.337 8a2.67 2.67 0 012.667-2.667A2.67 2.67 0 0110.67 8c0 1.47-1.2 2.667-2.667 2.667zM13.23 3.73a.955.955 0 01-.956.957.957.957 0 11.957-.957zm2.717.971c-.06-1.282-.353-2.417-1.292-3.352C13.72.413 12.585.12 11.303.056 9.98-.019 6.022-.019 4.7.056 3.423.116 2.288.41 1.35 1.346.409 2.28.12 3.415.056 4.697c-.075 1.32-.075 5.28 0 6.6.06 1.283.354 2.418 1.293 3.353.939.936 2.07 1.229 3.352 1.293 1.321.075 5.28.075 6.602 0 1.281-.06 2.416-.354 3.352-1.293.935-.935 1.228-2.07 1.292-3.352.075-1.321.075-5.277 0-6.598zm-1.706 8.015a2.7 2.7 0 01-1.521 1.521c-1.053.418-3.553.322-4.716.322-1.164 0-3.667.092-4.717-.322a2.7 2.7 0 01-1.52-1.52C1.348 11.662 1.444 9.163 1.444 8c0-1.164-.093-3.667.321-4.716a2.7 2.7 0 011.521-1.521c1.054-.418 3.553-.322 4.717-.322 1.163 0 3.666-.092 4.716.322a2.7 2.7 0 011.52 1.52c.418 1.054.322 3.553.322 4.717 0 1.164.097 3.667-.321 4.716z"></path></svg></a>
+                <a href=""><svg viewBox="0 0 18 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" focusable="false" class="chakra-icon css-6ey7w3"><path d="M17.177 3.878a2.144 2.144 0 00-1.51-1.52C14.338 2 9 2 9 2s-5.337 0-6.668.359A2.144 2.144 0 00.823 3.878C.467 5.218.467 8.012.467 8.012s0 2.795.356 4.135a2.113 2.113 0 001.51 1.494C3.662 14 9 14 9 14s5.337 0 6.668-.359a2.113 2.113 0 001.509-1.494c.356-1.34.356-4.135.356-4.135s0-2.795-.356-4.134zM7.255 10.55V5.475l4.46 2.537-4.46 2.538z"></path></svg></a>
+                <a href=""><svg aria-label="Threads" viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg" fill="currentColor" focusable="false" class="chakra-icon css-6ey7w3"><path class="x19hqcy" d="M141.537 88.9883C140.71 88.5919 139.87 88.2104 139.019 87.8451C137.537 60.5382 122.616 44.905 97.5619 44.745C97.4484 44.7443 97.3355 44.7443 97.222 44.7443C82.2364 44.7443 69.7731 51.1409 62.102 62.7807L75.881 72.2328C81.6116 63.5383 90.6052 61.6848 97.2286 61.6848C97.3051 61.6848 97.3819 61.6848 97.4576 61.6855C105.707 61.7381 111.932 64.1366 115.961 68.814C118.893 72.2193 120.854 76.925 121.825 82.8638C114.511 81.6207 106.601 81.2385 98.145 81.7233C74.3247 83.0954 59.0111 96.9879 60.0396 116.292C60.5615 126.084 65.4397 134.508 73.775 140.011C80.8224 144.663 89.899 146.938 99.3323 146.423C111.79 145.74 121.563 140.987 128.381 132.296C133.559 125.696 136.834 117.143 138.28 106.366C144.217 109.949 148.617 114.664 151.047 120.332C155.179 129.967 155.42 145.8 142.501 158.708C131.182 170.016 117.576 174.908 97.0135 175.059C74.2042 174.89 56.9538 167.575 45.7381 153.317C35.2355 139.966 29.8077 120.682 29.6052 96C29.8077 71.3178 35.2355 52.0336 45.7381 38.6827C56.9538 24.4249 74.2039 17.11 97.0132 16.9405C119.988 17.1113 137.539 24.4614 149.184 38.788C154.894 45.8136 159.199 54.6488 162.037 64.9503L178.184 60.6422C174.744 47.9622 169.331 37.0357 161.965 27.974C147.036 9.60668 125.202 0.195148 97.0695 0H96.9569C68.8816 0.19447 47.2921 9.6418 32.7883 28.0793C19.8819 44.4864 13.2244 67.3157 13.0007 95.9325L13 96L13.0007 96.0675C13.2244 124.684 19.8819 147.514 32.7883 163.921C47.2921 182.358 68.8816 191.806 96.9569 192H97.0695C122.03 191.827 139.624 185.292 154.118 170.811C173.081 151.866 172.51 128.119 166.26 113.541C161.776 103.087 153.227 94.5962 141.537 88.9883ZM98.4405 129.507C88.0005 130.095 77.1544 125.409 76.6196 115.372C76.2232 107.93 81.9158 99.626 99.0812 98.6368C101.047 98.5234 102.976 98.468 104.871 98.468C111.106 98.468 116.939 99.0737 122.242 100.233C120.264 124.935 108.662 128.946 98.4405 129.507Z"></path></svg></a>
+            </div>
+            <div class="manifest">
+                <a href=""><svg fill="none" height="80" viewBox="0 0 74 80" width="74" xmlns="http://www.w3.org/2000/svg"><path d="m34.9624 33.244c.5147-.3861.5576-1.0724.1716-1.5443l-4.0322-4.6327c-.4289-.4718-1.1582-.5147-1.63-.1287l-4.7614 3.9035c-.4719.3861-.5148 1.0724-.0858 1.5443l6.7346 6.9919c.4289.429.9008.6863 1.0724.5148.1287-.1716.0429-.7293-.2145-1.3298l-.6863-1.4584c-.2574-.5577-.0429-1.3298.4289-1.7159zm-16.9008 9.5228-2.8311 3.26c-.429.4719-.3432 1.1582.1287 1.5442l9.3512 7.3781c.4718.386 1.244.3002 1.63-.1716l2.5308-2.9598c.3861-.4719.3432-1.2011-.1286-1.5871l-9.0939-7.6354c-.4718-.3432-1.201-.3003-1.5871.1716zm5.6193-7.7641-3.8606 4.4611c-.4289.4719-.3432 1.2011.1287 1.5871l9.6944 8.4933c.4718.429 1.2439.429 1.7587.0429l3.8177-3.0884c.4718-.3861.5147-1.0724.0858-1.5014l-10.0805-10.0375c-.4289-.429-1.1152-.429-1.5442.0429zm-11.3673 28.9973c-.2145-.9866-.9008-1.7158-1.7158-2.1019-.5577-.2573-1.20109-.3002-1.84452-.1716-.9008.2145-1.63002.7722-2.01608 1.5443-.30027.6005-.42896 1.2868-.25738 2.0161.17159.8579.72923 1.5013 1.41555 1.9303.64344.386 1.41555.5147 2.18763.3431.7722-.1716 1.4585-.6434 1.8445-1.2868.3861-.6435.5577-1.4585.3861-2.2735zm.1716 4.3753s-.815.6864-1.5442.9008c-.98664.3432-2.05903.3432-3.08852.0429-.68633-.2144-1.32976-.6005-1.8874-1.1152-.77212-.7293-1.24397-1.6301-1.45845-2.5738-.12868-.5576-.17158-1.1153-.08579-1.7158.08579-.5147.21448-1.0724.47185-1.5442.21448-.3861.42896-.6864.42896-.6864.21448-.2573.51474-.6434.77212-.8579l10.03753-10.3378c.2145-.2144.6005-.2573.8579-.0429l6.563 5.4478c.2574.2144.2574.5576.0429.7721l-10.2949 10.9383c-.2145.2145-.6005.5577-.815.7721zm26.1662-23.0777 3.5174-2.5308c.5148-.3432.429-.6864-.2144-.6864l-6.9491-.0858c-.6434 0-.7721.3432-.3432.8151l2.2735 2.3592c.4289.429 1.2011.5147 1.7158.1287zm4.5898-21.8767 1.3727 1.7158c.2145.2574.6005.3861.9008.3432l.2574-.0429c.3002-.0429.7292.0858.9436.3003l3.0456 3.1742c.2145.2145.5577.2145.7721 0l2.5738-2.6595c.2144-.2145.6434-.5147.9437-.6005l12.1823-4.3325c.3002-.0858.3431-.386.1287-.6005l-10.2521-10.76676c-.2144-.21447-.386-.68633-.3431-.98659l.0858-1.28687c0-.30026.2145-.72922.4289-.9437l5.8338-5.53351c.2145-.214475.2574-.557638 0-.815011-.2145-.214477-.6434-.386059-.9437-.386059l-6.4772.557641c-.3003.042895-.7721.214477-.9866.428954l-5.8338 5.576405c-.2144.21448-.4289.64343-.4289.9437l-.4719 10.6381c0 .3002-.2145.7721-.4289.9866l-3.2601 3.4316c-.2145.2574-.2574.6434-.0429.8579zm18.3593-10.5523c-.3003 0-.3861.1716-.1716.3861l6.0053 6.3914c.2145.2145.4719.1716.5577-.1287l1.244-3.5603c.0857-.3003.1715-.7721.1715-1.1153l-.1715-5.96244c0-.30027-.1716-.77212-.429-.9866l-.0429-.04289c-.2145-.21448-.5576-.21448-.815 0l-4.933 4.67563c-.2145.2144-.6863.386-.9866.386zm-23.8499 18.4022 5.0617-3.6461c.5147-.3432.6005-1.0724.2144-1.5443l-4.2466-5.319c-.3861-.4719-1.1153-.5576-1.5871-.1716l-4.9759 4.0751c-.4719.386-.5576 1.1153-.1287 1.5871l4.0322 4.7614c.386.5148 1.1582.6005 1.63.2574zm-31.57104 12.0965c0-16.9866 13.81234-30.8418 30.84184-30.8418 2.874 0 5.7051.386 8.3646 1.1581l.2574-5.91953c-2.7453-.68632-5.6622-1.02949-8.622-1.02949-20.2038 0-36.632728 16.42892-36.632728 36.63272 0 5.9625 1.415548 11.5818 3.946378 16.5576l4.33244-4.4182c-1.58713-3.7319-2.48793-7.8499-2.48793-12.1394zm67.43164 0c0 20.2037-16.429 36.6327-36.6327 36.6327-9.3083 0-17.8016-3.4745-24.2359-9.2225l3.9892-4.2038c3.9893 3.4746 8.8794 5.9625 14.2842 7.0349l-.5576-3.9035c-.0858-.6005-.5577-1.4584-1.0295-1.8445l-3.5174-2.9598c-.4719-.3861-1.1153-1.2011-1.3727-1.7587l-1.3726-2.7882c-.2574-.5577-.1716-1.4156.2573-1.8874l.6006-.6863c.4289-.4719 1.0295-.8151 1.3726-.7293.3432.0858.9437-.2573 1.3727-.7292l4.1608-4.8472c.429-.4718 1.2011-1.0724 1.7587-1.3297l6.3915-3.0027c.5576-.2574.8579 0 .6434.6005l-5.6193 16c-.2145.6006.0858 1.1582.6863 1.244.6006.0858 1.244.0858 1.4585 0 .2144-.0858.4718.3003.6005.9008l1.7158 8.2359c.815-.0429 1.5871-.1287 2.3593-.2144l-2.4451-8.622c-.1716-.6006.1716-1.244.7721-1.4585l.2574-.0858c.6006-.2144.6006-.5576.0429-.7721l-2.5737-1.0295c-.5577-.2573-.8579-.9008-.6434-1.5013l5.6193-14.4129c.2144-.6005.815-1.3726 1.3297-1.7158l2.1877-1.63c.5147-.3861 1.4155-.815 2.0161-.9866l.3002-.0858c.6006-.1716.6006-.3861-.0429-.5148l-1.1152-.2144c-.6006-.1287-1.2869-.4719-1.4585-.7722-.1716-.3002-.3003-1.0723-.2574-1.6729l.0858-1.0295c.0429-.6434-.2144-.7292-.6005-.2145l-1.8874 2.5738c-.3861.5147-1.2011.9008-1.8016.9437l-5.1904.0429c-.6434 0-1.3297-.4719-1.5442-1.0295l-.9437-2.2735c-.2574-.5576 0-1.3297.5147-1.7158l11.1958-7.9357c.5147-.3431 1.2868-.3002 1.7587.1287l11.3244 11.0671c.4289.4289.6434 1.2868.386 1.8445l-8.2359 20.9329c-.2145.6006-.2145 1.5443.0429 2.1019l2.6595 6.0054c9.0081-5.4048 15.0563-15.2279 15.0563-26.4665 0-6.9062-2.2734-13.2976-6.134-18.4451l5.6622-2.016c4.0321 5.7908 6.3485 12.8257 6.3485 20.4182z" fill="#fff"></path></svg></a>
+                <div><p>Ремонт – это благородно</p></div>
+            </div>
+            <div class="licence">
+                <span>© 2026 FixiK -&nbsp;<a href="">Под лицензией Creative Commons</a></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Модалка: Войти -->
+<div class="modal-overlay" id="loginModal">
+    <div class="modal">
+        <button class="modal-close" id="closeLogin">✕</button>
+        <h2>Войти</h2>
+        <p class="modal-sub">Добро пожаловать обратно!</p>
+        <form id="loginForm">
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" id="loginEmail" placeholder="example@mail.com" required>
+            </div>
+            <div class="form-group">
+                <label>Пароль</label>
+                <input type="password" id="loginPassword" placeholder="••••••••" required>
+            </div>
+            <button type="submit" class="request-btn">Войти</button>
+            <div class="form-status" id="loginStatus"></div>
+        </form>
+        <p class="modal-switch">Нет аккаунта? <a href="#" id="switchToRegister">Зарегистрироваться</a></p>
+    </div>
+</div>
+
+<!-- Модалка: Регистрация -->
+<div class="modal-overlay" id="registerModal">
+    <div class="modal">
+        <button class="modal-close" id="closeRegister">✕</button>
+        <h2>Регистрация</h2>
+        <p class="modal-sub">Создайте аккаунт бесплатно</p>
+        <form id="registerForm">
+            <div class="form-group">
+                <label>Имя</label>
+                <input type="text" id="regName" placeholder="Иван Иванов" required>
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" id="regEmail" placeholder="example@mail.com" required>
+            </div>
+            <div class="form-group">
+                <label>Пароль</label>
+                <input type="password" id="regPassword" placeholder="Минимум 6 символов" required>
+            </div>
+            <button type="submit" class="request-btn">Зарегистрироваться</button>
+            <div class="form-status" id="registerStatus"></div>
+        </form>
+        <p class="modal-switch">Уже есть аккаунт? <a href="#" id="switchToLogin">Войти</a></p>
+    </div>
+</div>
+
+<script>
+    // ===== CALENDAR =====
+    const MONTHS_RU = ['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'];
+    const DAYS_SHORT = ['Пн','Вт','Ср','Чт','Пт','Сб','Вс'];
+
+    let calYear, calMonth;
+
+    function initCalendar() {
+        const now = new Date();
+        calYear = now.getFullYear();
+        calMonth = now.getMonth();
+        renderCalendar();
+    }
+
+    function renderCalendar() {
+        document.getElementById('calTitle').textContent = MONTHS_RU[calMonth] + ' ' + calYear;
+
+        const today = new Date();
+        today.setHours(0,0,0,0);
+        const maxDate = new Date(today);
+        maxDate.setDate(today.getDate() + 30);
+
+        const firstDay = new Date(calYear, calMonth, 1);
+        const lastDay = new Date(calYear, calMonth + 1, 0);
+
+        // Monday-based week: getDay() returns 0=Sun, we need 0=Mon
+        let startDow = firstDay.getDay();
+        startDow = startDow === 0 ? 6 : startDow - 1;
+
+        const container = document.getElementById('calDays');
+        container.innerHTML = '';
+
+        // Empty cells before first day
+        for (let i = 0; i < startDow; i++) {
+            const blank = document.createElement('span');
+            blank.className = 'cal-day empty';
+            container.appendChild(blank);
+        }
+
+        const selectedVal = document.getElementById('selectedDate').value;
+
+        for (let d = 1; d <= lastDay.getDate(); d++) {
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.textContent = d;
+            btn.className = 'cal-day';
+
+            const thisDate = new Date(calYear, calMonth, d);
+            const thisStr = formatDate(thisDate);
+            const dow = thisDate.getDay(); // 0=Sun, 6=Sat
+
+            const isPast = thisDate < today;
+            const isTooFar = thisDate > maxDate;
+            const isWeekend = dow === 0 || dow === 6;
+
+            if (isPast || isTooFar || isWeekend) {
+                btn.disabled = true;
+                btn.classList.add('disabled');
+            } else {
+                if (thisDate.toDateString() === today.toDateString()) {
+                    btn.classList.add('today');
+                }
+                if (thisStr === selectedVal) {
+                    btn.classList.add('selected');
+                }
+                btn.addEventListener('click', () => selectDate(thisStr, d));
+            }
+
+            container.appendChild(btn);
+        }
+    }
+
+    function formatDate(date) {
+        const y = date.getFullYear();
+        const m = String(date.getMonth() + 1).padStart(2, '0');
+        const d = String(date.getDate()).padStart(2, '0');
+        return `${y}-${m}-${d}`;
+    }
+
+    function formatDateRu(dateStr) {
+        const [y, m, d] = dateStr.split('-');
+        return `${d} ${MONTHS_RU[parseInt(m) - 1]} ${y}`;
+    }
+
+    function selectDate(dateStr, day) {
+        document.getElementById('selectedDate').value = dateStr;
+        document.getElementById('selectedDateLabel').textContent = 'Выбрано: ' + formatDateRu(dateStr);
+        renderCalendar();
+
+        // Reset time selection if date changes
+        document.getElementById('selectedTime').value = '';
+        document.querySelectorAll('.time-slot').forEach(b => b.classList.remove('active'));
+
+        // Disable Saturday/Sunday time slots already handled by disabled days
+        updateTimeSlots(dateStr);
+    }
+
+    function updateTimeSlots(dateStr) {
+        const date = new Date(dateStr);
+        const today = new Date();
+        today.setHours(0,0,0,0);
+        const isToday = date.toDateString() === today.toDateString();
+        const nowHour = new Date().getHours();
+
+        document.querySelectorAll('.time-slot').forEach(btn => {
+            const hour = parseInt(btn.dataset.time);
+            btn.disabled = false;
+            btn.classList.remove('disabled');
+            if (isToday && hour <= nowHour) {
+                btn.disabled = true;
+                btn.classList.add('disabled');
+            }
+        });
+    }
+
+    document.getElementById('calPrev').addEventListener('click', () => {
+        const now = new Date();
+        if (calYear === now.getFullYear() && calMonth === now.getMonth()) return;
+        calMonth--;
+        if (calMonth < 0) { calMonth = 11; calYear--; }
+        renderCalendar();
+    });
+
+    document.getElementById('calNext').addEventListener('click', () => {
+        calMonth++;
+        if (calMonth > 11) { calMonth = 0; calYear++; }
+        renderCalendar();
+    });
+
+    // Time slots
+    document.querySelectorAll('.time-slot').forEach(btn => {
+        btn.addEventListener('click', () => {
+            if (!document.getElementById('selectedDate').value) {
+                document.getElementById('selectedDateLabel').textContent = 'Сначала выберите дату';
+                document.getElementById('selectedDateLabel').style.color = '#dc2626';
+                return;
+            }
+            document.querySelectorAll('.time-slot').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            document.getElementById('selectedTime').value = btn.dataset.time;
+            document.getElementById('selectedDateLabel').style.color = '#16a34a';
+        });
+    });
+
+    initCalendar();
+
+    // ===== AUTH MODALS =====
+    const loginModal = document.getElementById('loginModal');
+    const registerModal = document.getElementById('registerModal');
+
+    document.getElementById('openLogin').addEventListener('click', e => { e.preventDefault(); loginModal.classList.add('active'); });
+    document.getElementById('openRegister').addEventListener('click', e => { e.preventDefault(); registerModal.classList.add('active'); });
+    document.getElementById('openTopRegister').addEventListener('click', e => { e.preventDefault(); registerModal.classList.add('active'); });
+    document.getElementById('closeLogin').addEventListener('click', () => loginModal.classList.remove('active'));
+    document.getElementById('closeRegister').addEventListener('click', () => registerModal.classList.remove('active'));
+    document.getElementById('switchToRegister').addEventListener('click', e => { e.preventDefault(); loginModal.classList.remove('active'); registerModal.classList.add('active'); });
+    document.getElementById('switchToLogin').addEventListener('click', e => { e.preventDefault(); registerModal.classList.remove('active'); loginModal.classList.add('active'); });
+    loginModal.addEventListener('click', e => { if (e.target === loginModal) loginModal.classList.remove('active'); });
+    registerModal.addEventListener('click', e => { if (e.target === registerModal) registerModal.classList.remove('active'); });
+
+    function updateNavAuth() {
+        const user = JSON.parse(localStorage.getItem('fixik_user') || 'null');
+        const regBtn = document.getElementById('openRegister');
+        const loginBtn = document.getElementById('openLogin');
+        const authBanner = document.getElementById('authBanner');
+        if (user) {
+            regBtn.textContent = user.name;
+            regBtn.style.pointerEvents = 'none';
+            loginBtn.textContent = 'Выйти';
+            loginBtn.onclick = e => { e.preventDefault(); localStorage.removeItem('fixik_user'); location.reload(); };
+            authBanner.style.display = 'none';
+        } else {
+            authBanner.style.display = '';
+        }
+    }
+    updateNavAuth();
+
+    document.getElementById('registerForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const status = document.getElementById('registerStatus');
+        const btn = this.querySelector('button[type=submit]');
+        btn.disabled = true;
+        status.className = 'form-status';
+        status.textContent = '';
+        try {
+            const res = await fetch('http://localhost:8000/auth/register', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    name: document.getElementById('regName').value,
+                    email: document.getElementById('regEmail').value,
+                    password: document.getElementById('regPassword').value
+                })
+            });
+            const data = await res.json();
+            if (res.ok) {
+                localStorage.setItem('fixik_user', JSON.stringify({ name: data.name, email: data.email, token: data.token }));
+                status.className = 'form-status success';
+                status.textContent = 'Аккаунт создан! Добро пожаловать.';
+                setTimeout(() => { registerModal.classList.remove('active'); updateNavAuth(); }, 1000);
+            } else {
+                status.className = 'form-status error';
+                status.textContent = data.detail || 'Ошибка регистрации';
+            }
+        } catch {
+            status.className = 'form-status error';
+            status.textContent = 'Сервер недоступен';
+        } finally {
+            btn.disabled = false;
+        }
+    });
+
+    document.getElementById('loginForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const status = document.getElementById('loginStatus');
+        const btn = this.querySelector('button[type=submit]');
+        btn.disabled = true;
+        status.className = 'form-status';
+        status.textContent = '';
+        try {
+            const res = await fetch('http://localhost:8000/auth/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    email: document.getElementById('loginEmail').value,
+                    password: document.getElementById('loginPassword').value
+                })
+            });
+            const data = await res.json();
+            if (res.ok) {
+                localStorage.setItem('fixik_user', JSON.stringify({ name: data.name, email: data.email, token: data.token }));
+                status.className = 'form-status success';
+                status.textContent = 'Вход выполнен!';
+                setTimeout(() => { loginModal.classList.remove('active'); updateNavAuth(); }, 800);
+            } else {
+                status.className = 'form-status error';
+                status.textContent = data.detail || 'Неверный email или пароль';
+            }
+        } catch {
+            status.className = 'form-status error';
+            status.textContent = 'Сервер недоступен';
+        } finally {
+            btn.disabled = false;
+        }
+    });
+
+    // ===== FORM SUBMIT =====
+    document.getElementById('requestForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        const date = document.getElementById('selectedDate').value;
+        const time = document.getElementById('selectedTime').value;
+        const label = document.getElementById('selectedDateLabel');
+
+        if (!date) {
+            label.textContent = 'Пожалуйста, выберите дату';
+            label.style.color = '#dc2626';
+            return;
+        }
+        if (!time) {
+            label.textContent = 'Пожалуйста, выберите время';
+            label.style.color = '#dc2626';
+            return;
+        }
+
+        const btn = document.getElementById('submitBtn');
+        const status = document.getElementById('formStatus');
+
+        btn.disabled = true;
+        btn.textContent = 'Отправляем...';
+        status.className = 'form-status';
+        status.textContent = '';
+
+        const data = {
+            name: document.getElementById('name').value,
+            phone: document.getElementById('phone').value,
+            device: document.getElementById('device').value,
+            description: document.getElementById('description').value,
+            date: date,
+            time: time
+        };
+
+        try {
+            const response = await fetch('http://localhost:8000/api/requests', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+
+            if (response.ok) {
+                status.className = 'form-status success';
+                status.textContent = `Заявка принята! Ждём вас ${formatDateRu(date)} в ${time}. Мы свяжемся для подтверждения.`;
+                document.getElementById('requestForm').reset();
+                document.getElementById('selectedDate').value = '';
+                document.getElementById('selectedTime').value = '';
+                document.getElementById('selectedDateLabel').textContent = '';
+                document.querySelectorAll('.time-slot').forEach(b => b.classList.remove('active'));
+                renderCalendar();
+            } else {
+                throw new Error('Server error');
+            }
+        } catch (err) {
+            status.className = 'form-status error';
+            status.textContent = 'Ошибка отправки. Попробуйте ещё раз или позвоните нам.';
+        } finally {
+            btn.disabled = false;
+            btn.textContent = 'Отправить заявку';
+        }
+    });
+</script>
+</body>
+</html>
