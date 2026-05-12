@@ -12,6 +12,11 @@
         <header class="conteiner">
             <img class="llogo" src="images/x.png" alt="">
             <a class="logo" href="#top">FixiK</a>
+            <button class="menu-toggle" id="menuToggle" type="button" aria-label="Открыть меню" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <nav>
                 <ul>
                     <li><a href="#request">Оставить заявку</a></li>
@@ -385,7 +390,24 @@
 </div>
 
 <script>
+    const API_BASE_URL = (() => {
+        const localHosts = ['localhost', '127.0.0.1', ''];
+        if (localHosts.includes(window.location.hostname)) {
+            return 'http://127.0.0.1:8000';
+        }
+        return 'https://fixik-vmi0.onrender.com';
+    })();
+
     // ===== PAGE NAVIGATION =====
+    const menuToggle = document.getElementById('menuToggle');
+    const headerNav = document.querySelector('.header nav');
+
+    menuToggle.addEventListener('click', () => {
+        const isOpen = headerNav.classList.toggle('active');
+        menuToggle.classList.toggle('active', isOpen);
+        menuToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
     document.querySelectorAll('a[href^="#"]').forEach(link => {
         link.addEventListener('click', e => {
             const targetId = link.getAttribute('href');
@@ -393,6 +415,9 @@
             const target = document.querySelector(targetId);
             if (!target) return;
             e.preventDefault();
+            headerNav.classList.remove('active');
+            menuToggle.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
             target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
     });
@@ -583,29 +608,62 @@
     // ===== AUTH MODALS =====
     const loginModal = document.getElementById('loginModal');
     const registerModal = document.getElementById('registerModal');
+    const openLoginLink = document.getElementById('openLogin');
+    const openRegisterLink = document.getElementById('openRegister');
+    const openTopRegisterLink = document.getElementById('openTopRegister');
 
-    document.getElementById('openLogin').addEventListener('click', e => { e.preventDefault(); loginModal.classList.add('active'); });
-    document.getElementById('openRegister').addEventListener('click', e => { e.preventDefault(); registerModal.classList.add('active'); });
-    document.getElementById('openTopRegister').addEventListener('click', e => { e.preventDefault(); registerModal.classList.add('active'); });
-    document.getElementById('closeLogin').addEventListener('click', () => loginModal.classList.remove('active'));
-    document.getElementById('closeRegister').addEventListener('click', () => registerModal.classList.remove('active'));
-    document.getElementById('switchToRegister').addEventListener('click', e => { e.preventDefault(); loginModal.classList.remove('active'); registerModal.classList.add('active'); });
-    document.getElementById('switchToLogin').addEventListener('click', e => { e.preventDefault(); registerModal.classList.remove('active'); loginModal.classList.add('active'); });
-    loginModal.addEventListener('click', e => { if (e.target === loginModal) loginModal.classList.remove('active'); });
-    registerModal.addEventListener('click', e => { if (e.target === registerModal) registerModal.classList.remove('active'); });
+    function openModal(modal) {
+        modal.classList.add('active');
+    }
+
+    function closeModal(modal) {
+        modal.classList.remove('active');
+    }
+
+    openLoginLink.addEventListener('click', e => {
+        e.preventDefault();
+        const user = JSON.parse(localStorage.getItem('fixik_user') || 'null');
+        if (user) {
+            localStorage.removeItem('fixik_user');
+            updateNavAuth();
+            return;
+        }
+        openModal(loginModal);
+    });
+    openRegisterLink.addEventListener('click', e => {
+        e.preventDefault();
+        if (!JSON.parse(localStorage.getItem('fixik_user') || 'null')) {
+            openModal(registerModal);
+        }
+    });
+    openTopRegisterLink.addEventListener('click', e => { e.preventDefault(); openModal(registerModal); });
+    document.getElementById('closeLogin').addEventListener('click', () => closeModal(loginModal));
+    document.getElementById('closeRegister').addEventListener('click', () => closeModal(registerModal));
+    document.getElementById('switchToRegister').addEventListener('click', e => { e.preventDefault(); closeModal(loginModal); openModal(registerModal); });
+    document.getElementById('switchToLogin').addEventListener('click', e => { e.preventDefault(); closeModal(registerModal); openModal(loginModal); });
+    loginModal.addEventListener('click', e => { if (e.target === loginModal) closeModal(loginModal); });
+    registerModal.addEventListener('click', e => { if (e.target === registerModal) closeModal(registerModal); });
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') {
+            closeModal(loginModal);
+            closeModal(registerModal);
+        }
+    });
 
     function updateNavAuth() {
         const user = JSON.parse(localStorage.getItem('fixik_user') || 'null');
-        const regBtn = document.getElementById('openRegister');
-        const loginBtn = document.getElementById('openLogin');
         const authBanner = document.getElementById('authBanner');
         if (user) {
-            regBtn.textContent = user.name;
-            regBtn.style.pointerEvents = 'none';
-            loginBtn.textContent = 'Выйти';
-            loginBtn.onclick = e => { e.preventDefault(); localStorage.removeItem('fixik_user'); location.reload(); };
+            openRegisterLink.textContent = user.name;
+            openRegisterLink.setAttribute('aria-disabled', 'true');
+            openRegisterLink.style.pointerEvents = 'none';
+            openLoginLink.textContent = 'Выйти';
             authBanner.style.display = 'none';
         } else {
+            openRegisterLink.textContent = 'Регистрация';
+            openRegisterLink.removeAttribute('aria-disabled');
+            openRegisterLink.style.pointerEvents = '';
+            openLoginLink.textContent = 'Войти';
             authBanner.style.display = '';
         }
     }
@@ -619,7 +677,7 @@
         status.className = 'form-status';
         status.textContent = '';
         try {
-            const res = await fetch('https://fixik-vmi0.onrender.com/auth/register', {
+            const res = await fetch(`${API_BASE_URL}/auth/register`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -633,7 +691,7 @@
                 localStorage.setItem('fixik_user', JSON.stringify({ name: data.name, email: data.email, token: data.token }));
                 status.className = 'form-status success';
                 status.textContent = 'Аккаунт создан! Добро пожаловать.';
-                setTimeout(() => { registerModal.classList.remove('active'); updateNavAuth(); }, 1000);
+                setTimeout(() => { closeModal(registerModal); updateNavAuth(); }, 1000);
             } else {
                 status.className = 'form-status error';
                 status.textContent = data.detail || 'Ошибка регистрации';
@@ -654,7 +712,7 @@
         status.className = 'form-status';
         status.textContent = '';
         try {
-            const res = await fetch('https://fixik-vmi0.onrender.com/auth/login', {
+            const res = await fetch(`${API_BASE_URL}/auth/login`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -667,7 +725,7 @@
                 localStorage.setItem('fixik_user', JSON.stringify({ name: data.name, email: data.email, token: data.token }));
                 status.className = 'form-status success';
                 status.textContent = 'Вход выполнен!';
-                setTimeout(() => { loginModal.classList.remove('active'); updateNavAuth(); }, 800);
+                setTimeout(() => { closeModal(loginModal); updateNavAuth(); }, 800);
             } else {
                 status.className = 'form-status error';
                 status.textContent = data.detail || 'Неверный email или пароль';
@@ -717,7 +775,7 @@
         };
 
         try {
-            const response = await fetch('https://fixik-vmi0.onrender.com/api/requests', {
+            const response = await fetch(`${API_BASE_URL}/api/requests`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data)
@@ -733,7 +791,8 @@
                 document.querySelectorAll('.time-slot').forEach(b => b.classList.remove('active'));
                 renderCalendar();
             } else {
-                throw new Error('Server error');
+                const error = await response.json().catch(() => null);
+                throw new Error(error?.detail || 'Server error');
             }
         } catch (err) {
             status.className = 'form-status error';
