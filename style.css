@@ -47,18 +47,23 @@ html{
     width: 1400px;
     margin: 0 auto;
 }
+.brand{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    flex: 0 0 auto;
+    line-height: 1;
+}
 header .logo{
     color: rgb(255, 255, 255);
     font-size: 29px;
     font-weight: 800;
-    padding-bottom: 10px;
-    position: relative;
-    left: 5px;
-    top: 5px;
 }
 header .llogo{
-    position: relative;
-    top: 13px;
+    display: block;
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
 }
 header nav{
     float: right;
@@ -1046,6 +1051,7 @@ img {
 .header .conteiner {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 16px;
 }
 
