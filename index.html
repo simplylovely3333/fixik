@@ -161,11 +161,13 @@
             <form class="request-form" id="requestForm">
                 <div class="form-group">
                     <label for="name">Ваше имя</label>
-                    <input type="text" id="name" name="name" placeholder="Иван Иванов" required>
+                    <input type="text" id="name" name="name" placeholder="Иван Иванов" minlength="2" required>
                 </div>
                 <div class="form-group">
                     <label for="phone">Телефон</label>
-                    <input type="tel" id="phone" name="phone" placeholder="+7 (777) 000-00-00" required>
+                    <input type="tel" id="phone" name="phone" placeholder="+7 (777) 000-00-00"
+                           pattern="\+\d \(\d{3}\) \d{3}-\d{2}-\d{2}" maxlength="18"
+                           title="Введите номер в формате +7 (777) 000-00-00" required>
                 </div>
                 <div class="form-group">
                     <label for="device">Тип устройства</label>
@@ -374,7 +376,7 @@
         <form id="registerForm">
             <div class="form-group">
                 <label>Имя</label>
-                <input type="text" id="regName" placeholder="Иван Иванов" required>
+                <input type="text" id="regName" placeholder="Иван Иванов" minlength="2" required>
             </div>
             <div class="form-group">
                 <label>Email</label>
@@ -382,7 +384,7 @@
             </div>
             <div class="form-group">
                 <label>Пароль</label>
-                <input type="password" id="regPassword" placeholder="Минимум 6 символов" required>
+                <input type="password" id="regPassword" placeholder="Минимум 6 символов" minlength="6" required>
             </div>
             <button type="submit" class="request-btn">Зарегистрироваться</button>
             <div class="form-status" id="registerStatus"></div>
@@ -739,6 +741,24 @@
             btn.disabled = false;
         }
     });
+
+    // ===== PHONE INPUT MASK =====
+    // Форматирует номер в вид +7 (777) 000-00-00 прямо во время ввода
+    const phoneInput = document.getElementById('phone');
+    phoneInput.addEventListener('input', function () {
+        let digits = this.value.replace(/\D/g, '');      // оставляем только цифры
+        if (digits.startsWith('8')) digits = '7' + digits.slice(1);
+        digits = digits.slice(0, 11);                    // не больше 11 цифр
+        if (digits === '') { this.value = ''; return; }
+        let r = '+' + digits[0];
+        if (digits.length > 1)   r += ' (' + digits.slice(1, 4);
+        if (digits.length >= 4)  r += ')';
+        if (digits.length >= 5)  r += ' ' + digits.slice(4, 7);
+        if (digits.length >= 8)  r += '-' + digits.slice(7, 9);
+        if (digits.length >= 10) r += '-' + digits.slice(9, 11);
+        this.value = r;
+    });
+
 
     // ===== FORM SUBMIT =====
     document.getElementById('requestForm').addEventListener('submit', async function(e) {

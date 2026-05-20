@@ -9,6 +9,7 @@ import httpx
 import sqlite3
 import hashlib
 import secrets
+import re
 import os
 
 app = FastAPI(title="FixiK API")
@@ -65,6 +66,21 @@ def init_db():
 
 def hash_password(password: str) -> str:
     return hashlib.sha256(password.encode()).hexdigest()
+
+
+# ===== ВАЛИДАЦИЯ =====
+EMAIL_RE = re.compile(r"^[^@\s]+@[^@\s]+\.[^@\s]+$")
+
+
+def is_valid_email(email: str) -> bool:
+    """Email корректен, если есть текст до и после @, а после точки в домене."""
+    return bool(EMAIL_RE.match(email))
+
+
+def is_valid_phone(phone: str) -> bool:
+    """Телефон корректен, если в нём ровно 11 цифр и он начинается с 7 или 8."""
+    digits = re.sub(r"\D", "", phone)
+    return len(digits) == 11 and digits[0] in "78"
 
 
 init_db()
@@ -135,29 +151,38 @@ async def send_telegram(request: RepairRequest, request_id: int):
 
 @app.post("/auth/register", status_code=201)
 def register(data: RegisterRequest):
+    name = data.name.strip()
+    email = data.email.strip().lower()
+    if len(name) < 2:
+        raise HTTPException(400, "Введите имя (минимум 2 символа)")
+    if not is_valid_email(email):
+        raise HTTPException(400, "Введите корректный email")
     if len(data.password) < 6:
         raise HTTPException(400, "Пароль должен быть минимум 6 символов")
     conn = sqlite3.connect(DB_PATH)
-    existing = conn.execute("SELECT id FROM users WHERE email = ?", (data.email,)).fetchone()
+    existing = conn.execute("SELECT id FROM users WHERE email = ?", (email,)).fetchone()
     if existing:
         conn.close()
         raise HTTPException(400, "Пользователь с таким email уже существует")
     conn.execute(
         "INSERT INTO users (name, email, password_hash, created_at) VALUES (?, ?, ?, ?)",
-        (data.name, data.email, hash_password(data.password), datetime.now(ALMATY_TZ).isoformat())
+        (name, email, hash_password(data.password), datetime.now(ALMATY_TZ).isoformat())
     )
     conn.commit()
     conn.close()
-    return {"name": data.name, "email": data.email, "token": secrets.token_hex(32)}
+    return {"name": name, "email": email, "token": secrets.token_hex(32)}
 
 
 @app.post("/auth/login")
 def login(data: LoginRequest):
+    email = data.email.strip().lower()
+    if not is_valid_email(email):
+        raise HTTPException(400, "Введите корректный email")
     conn = sqlite3.connect(DB_PATH)
     conn.row_factory = sqlite3.Row
     user = conn.execute(
         "SELECT * FROM users WHERE email = ? AND password_hash = ?",
-        (data.email, hash_password(data.password))
+        (email, hash_password(data.password))
     ).fetchone()
     conn.close()
     if not user:
@@ -167,6 +192,17 @@ def login(data: LoginRequest):
 
 @app.post("/api/requests", status_code=201)
 async def create_request(data: RepairRequest):
+    data.name = data.name.strip()
+    data.description = data.description.strip()
+    if len(data.name) < 2:
+        raise HTTPException(400, "Введите имя (минимум 2 символа)")
+    if not is_valid_phone(data.phone):
+        raise HTTPException(400, "Введите корректный номер телефона")
+    if not data.device.strip():
+        raise HTTPException(400, "Выберите тип устройства")
+    if len(data.description) < 5:
+        raise HTTPException(400, "Опишите проблему подробнее (минимум 5 символов)")
+
     created_at = datetime.now(ALMATY_TZ).isoformat()
 
     conn = sqlite3.connect(DB_PATH)
